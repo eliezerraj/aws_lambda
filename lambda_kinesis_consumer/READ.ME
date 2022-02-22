@@ -1,0 +1,34 @@
+json test
+
+REGION_NAME:	us-east-2
+RESOURCE_ID:	cluster-Y22FEUQJUJ7YAPYIQQNGSMEOMI
+
+{
+  "invocationId": "b911aef2-9ce2-4b92-8056-a0a516c0db23",
+  "sourceKinesisStreamArn": "arn:aws:kinesis:us-east-2:908671954593:stream/aws-rds-das-cluster-Y22FEUQJUJ7YAPYIQQNGSMEOMI",
+  "deliveryStreamArn": "arn:aws:firehose:us-east-2:908671954593:deliverystream/KDS-S3-H5ZR8",
+  "region": "us-east-2",
+  "records": [
+    {
+      "recordId": "49626929608555773087331953180682517394321381328135651394000000",
+      "approximateArrivalTimestamp": 1645399833221,
+      "data": "eyJ0eXBlIjoiRGF0YWJhc2VBY3Rpdml0eU1vbml0b3JpbmdSZWNvcmRzIiwidmVyc2lvbiI6IjEuMSIsImRhdGFiYXNlQWN0aXZpdHlFdmVudHMiOiJBWUFCZUo2UXJrR2d2c1k5Sm5hV2E1bjBFYTRBQUFBQkFBSkNRd0FiUkdGMFlVdGxlUUFBQUlBQUFBQU1FSzJHL3VWb3JYYmNlb3FDQURCQnJNQmJqT1J0b2xXcW9CUzZiaktNRy9acnJ4MnJPa09BRHJ2cEY4ck81UGlWc1lZY2toYVg0OGxRNDVKSmFUUUNBQUFBQUF3QUFCQUFBQUFBQUFBQUFBQUFBQUFBakdDajBiMlBhNE1sNlBUV3NSL2xaZi8vLy84QUFBQUJBQUFBQUFBQUFBQUFBQUFCQUFBQXEvbzdzZm9VazZBaVd3TFFSWGpuajY4aEhIME9SMFNVV3R3YVI4ZjU5eWk0SEMyZmhSWjBWME4yZlFxRmV2VXdQUjl4Ry9vNW9pZ3MvQlVFN28wSUlzNlErWkpxSDlZUW9ReEpvbk5LV1k4RUZJeXMvbmc2aW1LMDRKaW5hWkhJdUFES01zN1RyRGczaElLckRZVXdleGpOOEtJMVpLczdrc2FOUVBjUVZoTXcvOWNNeGZlNmNvRVpSb1RRVFl0bmpOdGwzK2NBRlA4NC8rQnBJc1ZkK0VQZTAxMGN2Z2NNclRBS3lhUUtNSXpzdzFHbTRpYjBtNXA5bWVBPSIsImtleSI6IkFRSURBSGpJZG5MR0pXcHdwdzNhbUdKSGwwVFhRUTV4VldZR2N3R21FalkvYWFsT3d3RWVhTkhjbHM2N3NmazRLcnJhOU1DQ0FBQUFmakI4QmdrcWhraUc5dzBCQndhZ2J6QnRBZ0VBTUdnR0NTcUdTSWIzRFFFSEFUQWVCZ2xnaGtnQlpRTUVBUzR3RVFRTVJoSWFvTWlZNkkxZm9sUkdBZ0VRZ0RzNEdOdFRLRkJ1dk9hZ0s0c0VhaXRxeGhtdDRpbDlXSHNsMThXckpBZnJBZ09qaXFBS09UckxFZ3hGQzhDYm1hZG5aL253Z0xIaW5BTVJYZz09In0=",
+      "kinesisRecordMetadata": {
+        "sequenceNumber": "49626929608555773087331953180682517394321381328135651394",
+        "subsequenceNumber": 0,
+        "partitionKey": "4be11d3c-1c49-41c7-9e80-d5900c867521",
+        "shardId": "shardId-000000000004",
+        "approximateArrivalTimestamp": 1645399833221
+      }
+    }
+  ]
+}
+
+pip install --target ./package aws_encryption_sdk
+pip install --target ./package -U cffi
+
+cd package
+zip -r ../lambda_kinesis_consumer-v03.zip .
+
+cd ..
+zip -g lambda_kinesis_consumer-v03.zip lambda_kinesis_consumer-v03.py
